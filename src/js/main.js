@@ -1,36 +1,22 @@
 
 const nav = document.querySelector('.header__nav')
+const hamburguerMenu = document.querySelector('.hamburguer-menu')
 const links = document.querySelectorAll('.header__nav a')
 const arrayLinks = [...links]
 let contadorClick = 0
 
-//crear el menu hamburguesa
-//mostrarlo cuando cambie el tamaño de la pantalla
-
 function displayMenuHamburguer_Onresize() {
     if(window.innerWidth <= 550) {
 
-        //if hamburguer menu exists, do not create other hamburguer menu
+        //If the menu already exists on the navegation, do not create another one.
         if(nav.firstElementChild.className === 'hamburguer-menu') {
-            for(link of arrayLinks) {
-                link.remove()
-            }
             return
+        }else {
+            nav.appendChild(hamburguerMenu)
         }
 
-        //Create hamburguer Menu
-        const divHamburguer = document.createElement('DIV')
-        divHamburguer.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-menu-2" width="40" height="40" viewBox="0 0 24 24" stroke-width="2" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
-        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-        <line x1="4" y1="6" x2="20" y2="6" />
-        <line x1="4" y1="12" x2="20" y2="12" />
-        <line x1="4" y1="18" x2="20" y2="18" />
-        </svg>`
-        divHamburguer.className = "hamburguer-menu"
-        nav.appendChild(divHamburguer)
-
         //create event listener
-        divHamburguer.addEventListener('click', displayMenu)
+        hamburguerMenu.addEventListener('click', displayMenu)
 
         for(link of arrayLinks) {
             link.remove()
@@ -42,7 +28,6 @@ function displayMenuHamburguer_Onresize() {
             nav.firstElementChild.remove()
         }
         //Show links
-        if(nav.firstElementChild)
         for(link of arrayLinks) {
             nav.appendChild(link)
         }
@@ -66,24 +51,18 @@ function displayMenu() {
 
 function displayMenuHamburguer() {
     if(window.innerWidth <= 550) {
-        const divHamburguer = document.createElement('DIV')
-        divHamburguer.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-menu-2" width="40" height="40" viewBox="0 0 24 24" stroke-width="2" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
-        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-        <line x1="4" y1="6" x2="20" y2="6" />
-        <line x1="4" y1="12" x2="20" y2="12" />
-        <line x1="4" y1="18" x2="20" y2="18" />
-        </svg>`
-        divHamburguer.className = "hamburguer-menu"
-        nav.appendChild(divHamburguer)
 
         //create event listener
-        divHamburguer.addEventListener('click', displayMenu)
+        hamburguerMenu.addEventListener('click', displayMenu)
 
         for(link of arrayLinks) {
             link.remove()
         }
 
-    } else {
+    } else if(window.innerWidth > 551) {
+        //Eliminar hamburguer menu
+        hamburguerMenu.remove()
+
         //Muestra los links
         for(link of arrayLinks) {
             nav.appendChild(link)

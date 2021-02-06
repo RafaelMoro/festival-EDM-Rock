@@ -1,0 +1,32 @@
+html {
+    font-size: 62.5%;
+    box-sizing: border-box;
+}
+* {
+    margin: 0;
+    padding: 0;
+}
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+body {
+    font-family: $mainFont;
+}
+a {
+    text-decoration: none;
+}
+img {
+    max-width: 100%;
+}
+h1 {
+    font-size: 4rem;
+}
+h2 {
+    font-size: 3.6rem;
+}
+h3 {
+    font-size: 3rem;
+}
+.hamburguer-menu:hover {
+    cursor: pointer;
+}

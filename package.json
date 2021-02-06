@@ -1,0 +1,25 @@
+{
+  "name": "festival_rock_edm_yo",
+  "version": "1.0.0",
+  "description": "Festival Rock and EDM page",
+  "main": "./src/js/main.js",
+  "scripts": {
+    "gulp:def": "gulp",
+    "gulp:minImg": "gulp minImage",
+    "gulp:webp": "gulp webp"
+  },
+  "keywords": [
+    "sass",
+    "gulp"
+  ],
+  "author": "rafaelmoro",
+  "license": "MIT",
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-cli": "^2.3.0",
+    "gulp-imagemin": "^7.1.0",
+    "gulp-notify": "^3.2.0",
+    "gulp-sass": "^4.1.0",
+    "gulp-webp": "^4.0.1"
+  }
+}

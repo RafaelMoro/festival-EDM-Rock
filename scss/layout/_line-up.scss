@@ -1,0 +1,66 @@
+.line-up {
+    background-color: $pink;
+    padding: 2rem;
+
+    h3 {
+        color: white;
+        text-align: center;
+    }
+    .day {
+        color: white;
+        font-size: 1.5rem;
+        text-align: center;
+        text-transform: uppercase;
+        margin-top: 1rem;
+    }
+}
+.bands {
+    margin: 2rem 1rem;
+    text-align: center;
+    font-size: 1.4rem;
+    padding: 2rem 0;
+
+    p {
+        padding: 1rem;
+
+        span {
+            font-weight: $bold;
+        }
+        &:first-of-type {
+            font-size: 1.6rem;
+        }
+    }
+
+}
+.bg-yellow {
+    p:nth-child(2n) {
+        background-color: darken($yellow, 10);
+    }
+}
+.bg-green {
+    p:nth-child(2n) {
+        background-color: darken($green, 10);
+    }
+}
+.day-band {
+    .bands__title::after {
+        content: '';
+        height: 10rem;
+        display: block;
+        margin: 1rem 0;
+        background-size: 15rem;
+        background-repeat: no-repeat;
+        background-position: center center;
+    }
+}
+.rock .bands__title {
+    &::after {
+        background-image: url(../../biuld/img/icono_rock.png);
+        background-position: center center;
+    }
+}
+.edm .bands__title {
+    &::after {
+        background-image: url(../../biuld/img/icono_edm.png);
+    }
+}

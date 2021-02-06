@@ -380,6 +380,18 @@ h3 {
   cursor: pointer;
 }
 
+.bg-green {
+  background-color: #4CB8B3;
+}
+
+.bg-yellow {
+  background-color: #FEF46D;
+}
+
+.bold {
+  font-weight: 700;
+}
+
 .header {
   width: 100%;
   height: 14rem;
@@ -395,7 +407,7 @@ h3 {
 }
 
 .header .header__title p {
-  font-size: 2.5rem;
+  font-size: 2.7rem;
   font-weight: 700;
   color: white;
 }
@@ -407,9 +419,158 @@ h3 {
   align-items: flex-end;
 }
 
+@media (min-width: 551px) {
+  .header .header__nav {
+    flex-direction: row;
+    gap: 1rem;
+  }
+}
+
 .header .header__nav a {
   text-decoration: none;
   color: white;
-  font-size: 1.5rem;
+  font-size: 1.7rem;
   margin-bottom: 1rem;
+}
+
+.header .header__nav a:hover {
+  color: #FEF46D;
+}
+
+.video-container {
+  height: 40rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.video-container .video {
+  display: block;
+}
+
+.video-container .video__title {
+  position: absolute;
+  background: linear-gradient(135deg, rgba(137, 28, 30, 0.8) 0%, rgba(158, 155, 242, 0.6) 67%, rgba(255, 255, 255, 0.5) 100%);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 2rem;
+}
+
+.video-container .video__title h1 {
+  color: white;
+  font-size: 3.5rem;
+}
+
+.video-container .video__title p {
+  background-color: #F53756;
+  color: white;
+  display: inline;
+  padding: 1rem;
+  font-size: 1.5rem;
+  font-weight: 700;
+  width: 60%;
+  max-width: 38.7rem;
+}
+
+.banner {
+  padding: 2rem 0;
+}
+
+.banner .banner__image {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.banner .banner__image img {
+  width: 100%;
+  max-width: 45rem;
+  margin: 0 auto;
+}
+
+.banner .banner__description .description__title {
+  font-size: 2.5rem;
+  margin: 2rem 0;
+  text-align: center;
+}
+
+.banner .banner__description .description__date {
+  color: #F53756;
+  font-weight: 700;
+  font-size: 1.5rem;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.banner .banner__description .description__text {
+  font-size: 1.5rem;
+  line-height: 1.5;
+  text-align: justify;
+  margin: 0 1rem;
+}
+
+.line-up {
+  background-color: #F53756;
+  padding: 2rem;
+}
+
+.line-up h3 {
+  color: white;
+  text-align: center;
+}
+
+.line-up .day {
+  color: white;
+  font-size: 1.5rem;
+  text-align: center;
+  text-transform: uppercase;
+  margin-top: 1rem;
+}
+
+.bands {
+  margin: 2rem 1rem;
+  text-align: center;
+  font-size: 1.4rem;
+  padding: 2rem 0;
+}
+
+.bands p {
+  padding: 1rem;
+}
+
+.bands p span {
+  font-weight: 700;
+}
+
+.bands p:first-of-type {
+  font-size: 1.6rem;
+}
+
+.bg-yellow p:nth-child(2n) {
+  background-color: #fef03a;
+}
+
+.bg-green p:nth-child(2n) {
+  background-color: #3b9691;
+}
+
+.day-band .bands__title::after {
+  content: '';
+  height: 10rem;
+  display: block;
+  margin: 1rem 0;
+  background-size: 15rem;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.rock .bands__title::after {
+  background-image: url(../../biuld/img/icono_rock.png);
+  background-position: center center;
+}
+
+.edm .bands__title::after {
+  background-image: url(../../biuld/img/icono_edm.png);
 }

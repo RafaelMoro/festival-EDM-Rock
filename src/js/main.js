@@ -1,4 +1,3 @@
-
 const nav = document.querySelector('.header__nav')
 const hamburguerMenu = document.querySelector('.hamburguer-menu')
 const links = document.querySelectorAll('.header__nav a')
@@ -69,8 +68,7 @@ function displayMenuHamburguer() {
         }
     }
 }
+
 displayMenuHamburguer()
-
-
 
 document.addEventListener('resize', displayMenuHamburguer_Onresize)

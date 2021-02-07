@@ -574,3 +574,70 @@ h3 {
 .edm .bands__title::after {
   background-image: url(../../biuld/img/icono_edm.png);
 }
+
+.gallery {
+  width: 100%;
+}
+
+.gallery h3 {
+  margin: 3rem 0;
+  text-align: center;
+}
+
+.gallery .photo img {
+  width: 100%;
+  margin: 2rem 0;
+}
+
+.tickets {
+  padding: 3rem 0;
+  background-color: #4CB8B3;
+}
+
+.tickets h3 {
+  color: white;
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.tickets .table .table__title {
+  font-size: 1.7rem;
+  text-align: center;
+  padding: 2rem 0;
+}
+
+.tickets .table-prices .table__title {
+  background-color: #F53756;
+  text-transform: uppercase;
+  color: white;
+  font-size: 2rem;
+  padding: 1rem 0;
+  text-align: center;
+}
+
+.tickets .table-prices .table__feature {
+  padding: 1rem 0;
+  background-color: white;
+  font-size: 1.7rem;
+  text-align: center;
+  border-bottom: 1px solid #efefef;
+}
+
+.tickets .table-prices .table__price {
+  padding: 1rem 0;
+  font-size: 2rem;
+  text-align: center;
+  background-color: #752F97;
+  color: white;
+}
+
+.footer {
+  padding: 2.5rem 0;
+  background-color: #F53756;
+}
+
+.footer p {
+  font-size: 1.5rem;
+  color: white;
+  text-align: center;
+}

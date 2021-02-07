@@ -1,6 +1,7 @@
 const nav = document.querySelector('.header__nav')
 const hamburguerMenu = document.querySelector('.hamburguer-menu')
 const links = document.querySelectorAll('.header__nav a')
+
 const arrayLinks = [...links]
 let contadorClick = 0
 
@@ -71,4 +72,24 @@ function displayMenuHamburguer() {
 
 displayMenuHamburguer()
 
+function showPhotos() {
+    const photosDiv = document.querySelector('.photos')
+    for(let i = 1; i<13; i++) {
+        const picture = document.createElement('PICTURE')
+        const source = document.createElement('SOURCE')
+
+        picture.className = 'photo'
+        source.srcset = `./biuld/img/thumb/${i}.webp`
+
+        const image = document.createElement('IMG')
+        image.src = `./biuld/img/thumb/${i}.jpg`
+        picture.appendChild(source)
+        picture.appendChild(image)
+        console.log(picture)
+
+        photosDiv.appendChild(picture)
+    }
+}
+
+showPhotos()
 document.addEventListener('resize', displayMenuHamburguer_Onresize)

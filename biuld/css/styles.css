@@ -419,13 +419,6 @@ h3 {
   align-items: flex-end;
 }
 
-@media (min-width: 551px) {
-  .header .header__nav {
-    flex-direction: row;
-    gap: 1rem;
-  }
-}
-
 .header .header__nav a {
   text-decoration: none;
   color: white;
@@ -435,6 +428,21 @@ h3 {
 
 .header .header__nav a:hover {
   color: #FEF46D;
+}
+
+@media (min-width: 551px) {
+  .header {
+    justify-content: space-evenly;
+  }
+  .header .header__title {
+    width: unset;
+  }
+  .header .header__nav {
+    width: unset;
+  }
+  .header__nav {
+    margin-right: 2rem;
+  }
 }
 
 .video-container {
@@ -584,9 +592,26 @@ h3 {
   text-align: center;
 }
 
+.gallery .photo {
+  display: flex;
+  justify-content: center;
+}
+
 .gallery .photo img {
   width: 100%;
+  max-width: 30rem;
   margin: 2rem 0;
+}
+
+@media (min-width: 551px) {
+  .photos {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 1rem;
+  }
+  .photos img {
+    width: 25rem;
+  }
 }
 
 .tickets {

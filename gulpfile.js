@@ -5,9 +5,9 @@ const notify = require('gulp-notify')
 const webp = require('gulp-webp')
 
 function css(done) {
-    return src('./scss/app.scss')
+    return src('./scss/styles.scss')
         .pipe(sass({
-            outputStyle: 'expanded' //Antes de cssnano
+            outputStyle: 'expanded'
         }))
         .pipe(dest('./biuld/css'))
 }

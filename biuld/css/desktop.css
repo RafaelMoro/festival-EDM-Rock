@@ -1,0 +1,31 @@
+.header {
+  justify-content: space-between;
+}
+
+.header .header__title p {
+  font-size: 4rem;
+}
+
+.video-container .video__title h1 {
+  font-size: 6rem;
+}
+
+.video-container .video__title p {
+  font-size: 2rem;
+}
+
+.line-up {
+  padding: 5rem 2rem;
+}
+
+.tickets {
+  padding: 5rem 0;
+}
+
+.gallery {
+  padding: 5rem 0;
+}
+
+.gallery .photos {
+  grid-template-columns: repeat(6, 1fr);
+}

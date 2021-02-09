@@ -5,7 +5,7 @@ const notify = require('gulp-notify')
 const webp = require('gulp-webp')
 
 function css(done) {
-    return src('./scss/styles.scss')
+    return src(['./scss/styles.scss','./scss/tablet.scss', './scss/desktop.scss'])
         .pipe(sass({
             outputStyle: 'expanded'
         }))

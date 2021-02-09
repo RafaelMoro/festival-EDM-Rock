@@ -392,6 +392,11 @@ h3 {
   font-weight: 700;
 }
 
+.container {
+  max-width: 120rem;
+  margin: 0 auto;
+}
+
 .header {
   width: 100%;
   height: 14rem;
@@ -402,10 +407,6 @@ h3 {
   align-items: center;
 }
 
-.header .header__title {
-  width: 70%;
-}
-
 .header .header__title p {
   font-size: 2.7rem;
   font-weight: 700;
@@ -414,7 +415,6 @@ h3 {
 
 .header .header__nav {
   display: flex;
-  width: 30%;
   flex-direction: column;
   align-items: flex-end;
 }
@@ -434,19 +434,14 @@ h3 {
   .header {
     justify-content: space-evenly;
   }
-  .header .header__title {
-    width: unset;
-  }
-  .header .header__nav {
-    width: unset;
-  }
   .header__nav {
     margin-right: 2rem;
   }
 }
 
 .video-container {
-  height: 40rem;
+  min-height: 40rem;
+  max-height: 70rem;
   position: relative;
   overflow: hidden;
 }
@@ -468,7 +463,7 @@ h3 {
 
 .video-container .video__title h1 {
   color: white;
-  font-size: 3.5rem;
+  font-size: 4rem;
 }
 
 .video-container .video__title p {
@@ -476,7 +471,7 @@ h3 {
   color: white;
   display: inline;
   padding: 1rem;
-  font-size: 1.5rem;
+  font-size: 2rem;
   font-weight: 700;
   width: 60%;
   max-width: 38.7rem;
@@ -538,14 +533,15 @@ h3 {
 }
 
 .bands {
-  margin: 2rem 1rem;
+  margin: 2rem auto;
   text-align: center;
   font-size: 1.4rem;
   padding: 2rem 0;
+  max-width: 55rem;
 }
 
 .bands p {
-  padding: 1rem;
+  padding: 2rem;
 }
 
 .bands p span {
@@ -599,7 +595,7 @@ h3 {
 
 .gallery .photo img {
   width: 100%;
-  max-width: 30rem;
+  max-width: 20rem;
   margin: 2rem 0;
 }
 
@@ -623,6 +619,11 @@ h3 {
   color: white;
   text-align: center;
   margin-bottom: 2.5rem;
+}
+
+.tickets .table {
+  max-width: 38rem;
+  margin: 0 auto;
 }
 
 .tickets .table .table__title {

@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rock&EDM Festival</title>
     <link rel="stylesheet" href="./biuld/css/styles.css">
+    <link rel="stylesheet" href="./biuld/css/tablet.css" media="screen and (min-width: 768px)">
+    <link rel="stylesheet" href="./biuld/css/desktop.css" media="screen and (min-width: 1024px)">
 </head>
 <body>
     <header class="header">
@@ -32,12 +34,12 @@
             <p>Julio 2021, Guadalajara, México</p>
         </div>
         <video class="video" autoplay muted loop>
-            <source src="./biuld/video/concierto.m4v" type="video/mp4">
+            <source src="./biuld/video/concierto.mp4" type="video/mp4">
             <source src="./biuld/video/concierto.ogg" type="video/ogg">
             <source src="./biuld/video/concierto.webm" type="video/webm">
         </video>
     </div>
-    <div class="banner">
+    <div class="banner container">
         <picture class="banner__image">
             <source srcset="./biuld/img/imagen_vocalista.webp">
             <img src="./biuld/img/imagen_vocalista.jpg" alt="Imagen Vocalista">
@@ -52,7 +54,7 @@
         <h3>Line up</h3>
 
         <p class="day">Viernes 21</p>
-        <div class="day-band">
+        <div class="day-band container">
             <div class="bands rock bg-yellow">
                 <p class="bands__title">Escenario Rock</p>
                 <p><span>24:00 |</span> Metallica</p>
@@ -74,7 +76,7 @@
         </div>
 
         <p class="day">Sábado 22</p>
-        <div class="day-band">
+        <div class="day-band container">
             <div class="bands rock bg-green">
                 <p class="bands__title">Escenario Rock</p>
                 <p><span>24:00 |</span> Red Hot Chilli Peppers</p>
@@ -97,7 +99,7 @@
     </section>
     <section class="gallery">
         <h3>Galeria</h3>
-        <div class="photos"></div>
+        <div class="photos container"></div>
     </section>
     <section class="tickets">
         <h3>Boletos</h3>

@@ -39,3 +39,7 @@ h3 {
 .bold {
     font-weight: $bold;
 }
+.container {
+    max-width: 120rem;
+    margin: 0 auto;
+}

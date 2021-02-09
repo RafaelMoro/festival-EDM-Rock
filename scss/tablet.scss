@@ -1,0 +1,60 @@
+.header {
+    .header__title {
+        p {
+            font-size: 3.5rem;
+        }
+    }
+    .header__nav {
+        flex-direction: row;
+        margin-right: 0;
+        a {
+            margin-right: 2rem;
+            font-size: 2rem;
+        }
+    }
+}
+.video-container {
+    .video__title {
+        h1 {
+            font-size: 5rem;
+        }
+        p {
+            font-size: 2rem;
+        }
+    }
+}
+.banner {
+    display: flex;
+    width: 90%;
+    margin: 0 auto;
+    padding: 5rem 0;
+    .banner__image {
+        width: 50%;
+    }
+    .banner__description {
+        width: 50%;
+    }
+}
+.day-band {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 5rem;
+    .bands {
+        margin: 3rem 0;
+    }
+}
+.gallery {
+    .photos {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+.tickets {
+    display: flex;
+    flex-wrap: wrap;
+    h3 {
+        width: 100%;
+    }
+    .table {
+        width: 50%;
+    }
+}

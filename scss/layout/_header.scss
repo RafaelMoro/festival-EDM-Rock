@@ -8,7 +8,6 @@
     align-items: center;
 
     .header__title {
-        width: 70%;
         p {
             font-size: 2.7rem;
             font-weight: $bold;
@@ -17,7 +16,6 @@
     }
     .header__nav{
         display: flex;
-        width: 30%;
         flex-direction: column;
         align-items: flex-end;
 
@@ -37,12 +35,6 @@
 @media (min-width: 551px) {
     .header {
         justify-content: space-evenly;
-        .header__title {
-            width: unset;
-        }
-        .header__nav {
-            width: unset;
-        }
     }
     .header__nav {
         margin-right: 2rem;

@@ -1,83 +1,79 @@
 const nav = document.querySelector('.header__nav')
-const hamburguerMenu = document.querySelector('.hamburguer-menu')
+const hamburguerMenuHTML = document.querySelector('.hamburguer-menu')
 const links = document.querySelectorAll('.header__nav a')
 const arrayLinks = [...links]
 let contadorClick = 0
 
-function displayMenuHamburguer_Onresize() {
-    if(window.innerWidth <= 550) {
-        //Remove hidden class
-        hamburguerMenu.classList.remove('hidden')
-        //If the menu already exists on the navegation, do not create another one.
-        if(nav.firstElementChild.className === 'hamburguer-menu') {
-            return
+class hamburguerMenu {
+    constructor(){}
+
+    menuOnResize() {
+        if(window.innerWidth <= 550) {
+            //Remove hidden class
+            hamburguerMenuHTML.classList.remove('hidden')
+            //If the menu already exists on the navegation, do not create another one.
+            if(nav.firstElementChild.className === 'hamburguer-menu') {
+                return
+            }else {
+                nav.appendChild(hamburguerMenuHTML)
+            }
+            //create event listener
+            hamburguerMenuHTML.addEventListener('click', this.displayMenu)
+            for(let i = 0; i<arrayLinks.length; i++) {
+                arrayLinks[i].remove()
+            }
+        }else if(window.innerWidth >= 551) {
+            //remove hamburguer menu if it exists
+            if(nav.firstElementChild.className === 'hamburguer-menu') {
+                nav.firstElementChild.remove()
+            }
+            //Show links
+            for(let i = 0; i<arrayLinks.length; i++) {
+                arrayLinks[i].classList.remove('hidden')
+                nav.appendChild(arrayLinks[i])
+            }
+        }
+    }
+    menuOnSize() {
+        if(window.innerWidth <= 550) {
+            //Remove hidden class
+            hamburguerMenuHTML.classList.remove('hidden')
+            //create event listener
+            hamburguerMenuHTML.addEventListener('click', this.displayMenu)
+            for(let i = 0; i<arrayLinks.length; i++) {
+                arrayLinks[i].remove()
+            }
+        } else if(window.innerWidth > 551) {
+            //Delete hamburguer menu
+            hamburguerMenuHTML.remove()
+            //Show the links
+            for(let i = 0; i<arrayLinks.length; i++) {
+                arrayLinks[i].classList.remove('hidden')
+                nav.appendChild(arrayLinks[i])
+            }
+        }
+    }
+    displayMenu() {
+        contadorClick++
+        //If module´s number is odd, show it. If not, hide it.
+        if(contadorClick%2 !== 0) {
+            for(let i = 0; i<arrayLinks.length; i++) {
+                arrayLinks[i].classList.remove('hidden')
+                nav.appendChild(arrayLinks[i])
+            }
         }else {
-            nav.appendChild(hamburguerMenu)
-        }
-
-        //create event listener
-        hamburguerMenu.addEventListener('click', displayMenu)
-
-        for(let i = 0; i<arrayLinks.length; i++) {
-            arrayLinks[i].remove()
-        }
-
-    }else if(window.innerWidth >= 551) {
-        //remove hamburguer menu if it exists
-        if(nav.firstElementChild.className === 'hamburguer-menu') {
-            nav.firstElementChild.remove()
-        }
-        //Show links
-        for(let i = 0; i<arrayLinks.length; i++) {
-            arrayLinks[i].classList.remove('hidden')
-            nav.appendChild(arrayLinks[i])
+            for(let i = 0; i<arrayLinks.length; i++) {
+                arrayLinks[i].remove()
+            }
         }
     }
 }
-window.onresize = displayMenuHamburguer_Onresize
-
-function displayMenuHamburguer() {
-    if(window.innerWidth <= 550) {
-        //Remove hidden class
-        hamburguerMenu.classList.remove('hidden')
-
-        //create event listener
-        hamburguerMenu.addEventListener('click', displayMenu)
-
-        for(let i = 0; i<arrayLinks.length; i++) {
-            arrayLinks[i].remove()
-        }
-
-    } else if(window.innerWidth > 551) {
-        //Eliminar hamburguer menu
-        hamburguerMenu.remove()
-
-        //Muestra los links
-        for(let i = 0; i<arrayLinks.length; i++) {
-            arrayLinks[i].classList.remove('hidden')
-            nav.appendChild(arrayLinks[i])
-        }
-    }
-}
+const menu = new hamburguerMenu()
+window.onresize = menu.menuOnResize
 
 const startHamburguerMenu = () => {
-    displayMenuHamburguer()
-    document.addEventListener('resize', displayMenuHamburguer_Onresize)
-}
-
-function displayMenu() {
-    contadorClick++
-    //Si el modulo con numero impar, muestra. Sino, esconde
-    if(contadorClick%2 !== 0) {
-        for(let i = 0; i<arrayLinks.length; i++) {
-            arrayLinks[i].classList.remove('hidden')
-            nav.appendChild(arrayLinks[i])
-        }
-    }else {
-        for(let i = 0; i<arrayLinks.length; i++) {
-            arrayLinks[i].remove()
-        }
-    }
+    menu.menuOnSize()
+    document.addEventListener('resize', menu.menuOnResize)
 }
 
 document.addEventListener('DOMContentLoaded', startHamburguerMenu)

@@ -1,4 +1,0 @@
-Poner bold,
-
-lazy loading a las imagenes, lazy loading al video, precargarlo.
-Ponerle alt a las imagenes

@@ -8,6 +8,7 @@
     align-items: center;
 
     .header__title {
+        width: 70%;
         p {
             font-size: 2.7rem;
             font-weight: $bold;
@@ -15,28 +16,84 @@
         }
     }
     .header__nav{
-        display: flex;
-        flex-direction: column;
-        align-items: flex-end;
-
-
-        a {
-            text-decoration: none;
-            color: white;
-            font-size: 1.7rem;
-            margin-bottom: 1rem;
-            &:hover {
-                color: $yellow;
-            }
-
-        }
+        width: 20%;
     }
+}
+.hamburguer-menu {
+    opacity: 1;
+    cursor: pointer;
+    position: relative;
+    z-index: 2;
+    transition: all .7s ease;
+}
+.bar {
+    display: block;
+    height: 5px;
+    width: 50px;
+    margin-top: 8px;
+    background-color: white;
+    transition: all .7s ease;
+}
+.hamburguer-menu.active .top {
+    transform: translateY(15px) rotateZ(45deg);
+}
+
+.hamburguer-menu.active .bottom {
+    transform: translateY(-15px) rotateZ(-45deg);
+}
+
+.hamburguer-menu.active .middle {
+    width: 0;
+}
+.aside {
+    position: fixed;
+    top: 0;
+    right: 0;
+    background-color: darken($green, 10);
+    width: 0;
+    height: 100vh;
+    transition: width .7s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.aside.active {
+    width: 40rem;
+}
+.header__link {
+    text-decoration: none;
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    line-height: 1.5;
+    color: white;
+    margin: 1rem 0;
+    opacity: 0;
+    transform: translateY(-20px);
+    &:hover {
+        color: $yellow;
+    }
+}
+.header__link.active {
+    opacity: 1;
+    transform: translateY(0px);
+}
+.header__link:first-of-type {
+    margin-top: 15rem;
+    transition: all .7s .2s ease-in-out;
+}
+.header__link:nth-of-type(2) {
+    transition: all .7s .4s ease-in-out;
+}
+.header__link:last-of-type {
+    transition: all .7s .6s ease-in-out;
 }
 @media (min-width: 551px) {
     .header {
         justify-content: space-evenly;
     }
     .header__nav {
+        display: flex;
         margin-right: 2rem;
     }
 }

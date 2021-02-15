@@ -13,7 +13,6 @@ function showPhotos() {
         registerImage(image)
         picture.appendChild(source)
         picture.appendChild(image)
-        console.log(image)
 
         photosDiv.appendChild(picture)
     }

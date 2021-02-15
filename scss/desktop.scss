@@ -5,6 +5,16 @@
             font-size: 4rem;
         }
     }
+    .header__nav {
+        width: 40%;
+        display: flex;
+        justify-content: space-between;
+        .header__link {
+            opacity: 1;
+            margin: 0;
+            transition: color .1s ease;
+        }
+    }
 }
 .video-container {
     .video__title {

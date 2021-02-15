@@ -5,12 +5,7 @@
         }
     }
     .header__nav {
-        flex-direction: row;
-        margin-right: 0;
-        a {
-            margin-right: 2rem;
-            font-size: 2rem;
-        }
+        width: 40%;
     }
 }
 .video-container {

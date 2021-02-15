@@ -12,6 +12,9 @@ html {
 body {
     font-family: $mainFont;
 }
+body.active {
+    overflow: hidden;
+}
 a {
     text-decoration: none;
 }

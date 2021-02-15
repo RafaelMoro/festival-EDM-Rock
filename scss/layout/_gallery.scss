@@ -15,6 +15,51 @@
         }
     }
 }
+.overlay {
+    position: fixed;
+    background-color: transparent;
+    width: 100%;
+    height: 100%;
+    padding: 0 5rem;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all .7s ease;
+    &.active {
+        background-color: rgba(0,0,0,0.5);
+    }
+    img {
+        width: 0;
+        transform: translateY(-20px);
+        transition: .7s;
+        &.active {
+            width: 100%;
+            transform: translateY(0px);
+        }
+    }
+    p {
+        opacity: 0;
+        transition: .7s;
+        &.active {
+            opacity: 1;
+        }
+    }
+}
+.btn-cerrar {
+    width: 5rem;
+    height: 5rem;
+    background-color: white;
+    display: grid;
+    place-items: center;
+    font-weight: $bold;
+    font-size: 3rem;
+    border-radius: 50%;
+
+    &:hover {
+        cursor: pointer;
+    }
+}
 @media (min-width: 551px) {
     .photos {
         display: grid;

@@ -11,10 +11,11 @@ html {
 }
 body {
     font-family: $mainFont;
+    &.active {
+        overflow: hidden;
+    }
 }
-body.active {
-    overflow: hidden;
-}
+
 a {
     text-decoration: none;
 }

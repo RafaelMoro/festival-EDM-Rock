@@ -1,2 +1,1 @@
-poner el zoom de las imagenes.
-fijar el header cuando baje
+fijar el header cuando baje.

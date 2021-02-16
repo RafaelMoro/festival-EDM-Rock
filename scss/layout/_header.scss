@@ -18,12 +18,18 @@
     .header__nav{
         width: 20%;
     }
+    &.headerFixed {
+        position: fixed;
+        z-index: 2;
+        height: 10rem;
+        box-shadow: 0 .3rem .4rem #444;
+    }
 }
 .hamburguer-menu {
     opacity: 1;
     cursor: pointer;
     position: relative;
-    z-index: 2;
+    z-index: 100;
     transition: all .7s ease;
 }
 .bar {
@@ -57,6 +63,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    z-index: 3;
 }
 .aside.active {
     width: 40rem;

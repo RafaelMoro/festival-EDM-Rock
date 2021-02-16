@@ -7,13 +7,15 @@ const links = []
 for(let i = 0; i < 3; i++) {
     const link = document.createElement('A')
     link.className = 'header__link'
-    link.href ='#'
     links.push(link)
 }
 
 links[0].textContent = 'Line Up'
+links[0].href ='#line-up'
 links[1].textContent = 'Galería'
+links[1].href ='#galeria'
 links[2].textContent = 'Precios'
+links[2].href ='#precios'
 
 class hamburguerMenu {
     constructor(){}
@@ -73,7 +75,7 @@ class hamburguerMenu {
             for(let i = 0; i < 3; i++ ) {
                 aside.appendChild(links[i])
             }
-            body.appendChild(aside)
+            nav.appendChild(aside)
 
             setTimeout(() => {
                 aside.classList.add('active')
@@ -83,29 +85,61 @@ class hamburguerMenu {
                     links[i].classList.add('active')
                 }
             }, 500)
+            aside.addEventListener('click', (evento) => {
+                if(evento.target.nodeName === 'A') {
+                    const aside = document.querySelector('.aside')
+                    for(let i = 0; i < 3; i++ ) {
+                        links[i].classList.remove('active')
+                        links[i].remove()
+                    }
+                    aside.classList.remove('active')
+                    hamburguerMenuHTML.classList.remove('active')
+                    body.classList.remove('active')
+                    setTimeout(() => {
+                        aside.remove()
+                    }, 1000)
+                    contadorClick++
+                }
+            })
         }else {
-            const aside = document.querySelector('.aside')
-            for(let i = 0; i < 3; i++ ) {
-                links[i].classList.remove('active')
-                links[i].remove()
-            }
-            aside.classList.remove('active')
-            hamburguerMenuHTML.classList.remove('active')
-            body.classList.remove('active')
-            setTimeout(() => {
-                aside.remove()
-            }, 1000)
+            if(document.querySelector('.aside')) {
+                const aside = document.querySelector('.aside')
+                for(let i = 0; i < 3; i++ ) {
+                    links[i].classList.remove('active')
+                    links[i].remove()
+                }
+                aside.classList.remove('active')
+                hamburguerMenuHTML.classList.remove('active')
+                body.classList.remove('active')
+                setTimeout(() => {
+                    aside.remove()
+                }, 1000)
             }
         }
+    }
+    fixedNavegation() {
+        const header = document.querySelector('.header')
+        //Intersection observer
+        const observer = new IntersectionObserver( function(entries) {
+            if(entries[0].isIntersecting) {
+                header.classList.remove('headerFixed')
+            }else {
+                header.classList.add('headerFixed')
+            }
+        })
+
+        //Elemento a observar
+        observer.observe(document.querySelector('.video-container'))
+    }
 }
 const menu = new hamburguerMenu()
 window.onresize = menu.menuOnResize
 
 const startHamburguerMenu = () => {
     menu.menuOnSize()
+    menu.fixedNavegation()
     document.addEventListener('resize', menu.menuOnResize)
 }
-
 document.addEventListener('DOMContentLoaded', startHamburguerMenu)
 
 export default startHamburguerMenu

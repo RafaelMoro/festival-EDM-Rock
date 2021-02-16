@@ -9,7 +9,6 @@ for(let i = 0; i < 3; i++) {
     link.className = 'header__link'
     links.push(link)
 }
-
 links[0].textContent = 'Line Up'
 links[0].href ='#line-up'
 links[1].textContent = 'Galería'
@@ -134,12 +133,10 @@ class hamburguerMenu {
 }
 const menu = new hamburguerMenu()
 window.onresize = menu.menuOnResize
-
 const startHamburguerMenu = () => {
     menu.menuOnSize()
     menu.fixedNavegation()
     document.addEventListener('resize', menu.menuOnResize)
 }
 document.addEventListener('DOMContentLoaded', startHamburguerMenu)
-
 export default startHamburguerMenu
